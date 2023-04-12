@@ -195,7 +195,7 @@ INT8 hexchar2UINT4[] = { -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-
 
 UINT64 GetUINT64fromHEXchar(char* prm_0) {
     UINT64 result = 0;
-    for (int cnt = 0; cnt < 16; cnt++) { result |= (((UINT64)hexchar2UINT4[prm_0[cnt]]&0xF)<<((15-cnt)*4)); }
+    for (int cnt = 0; cnt < strlen(prm_0); cnt++) { result |= (((UINT64)hexchar2UINT4[prm_0[cnt]]&0xF)<<(((strlen(prm_0)-1)-cnt)*4)); }
     return result;
 }
 
