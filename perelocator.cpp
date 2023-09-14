@@ -108,7 +108,8 @@ void* RelocatePE(char* prm_0,BOOL prm_1,UINT64 prm_2) {
         if ((*(UINT32*)(reloc + (tmp4relocptx - 4))) != 0)
             goto loop4relocate;
         cnt = 0;
-        if ((*(UINT16*)(&buff0[0x18])) == 0x10b) {
+        //MessageBoxA(0, "A", "B", 0);
+        /*if ((*(UINT16*)(&buff0[0x18])) == 0x10b) {
             //32bit
             while ((*(UINT32*)(buff4pe + (*(UINT32*)(&buff0[0x80])) + (cnt * 20))) != 0) {
                 cnt2 = 0;
@@ -157,7 +158,7 @@ void* RelocatePE(char* prm_0,BOOL prm_1,UINT64 prm_2) {
         if (textaddr != 0) {
             VirtualProtect((void*)(textaddr), textaddrsize, PAGE_EXECUTE_READWRITE, &tmp);
             FlushInstructionCache(GetCurrentProcess(), (void*)(textaddr), textaddrsize);
-        }
+        }*/
         if (prm_1 == true) {
             if ((*(UINT16*)(&buff0[0x18])) == 0x10b) {
                 //32bit
